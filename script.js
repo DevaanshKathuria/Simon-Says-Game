@@ -29,10 +29,8 @@ function nextSequence() {
   level++;
   document.getElementById("status").textContent = `Level ${level}`;
 
-  // Clear the sequence display at the start of each level
   document.getElementById("sequence-display").textContent = "-";
 
-  // Generate a random color and push it to the gamePattern
   const randomColor = colors[Math.floor(Math.random() * colors.length)];
   gamePattern.push(randomColor);
 
@@ -80,16 +78,14 @@ function handleUserClick(event) {
   clickCount++;
   document.getElementById("click-count").textContent = clickCount;
 
-  // Update the current sequence display and set the text color to the box clicked
   const sequenceDisplay = document.getElementById("sequence-display");
-  sequenceDisplay.innerHTML = ""; // Clear the previous content
+  sequenceDisplay.innerHTML = "";
 
-  // Iterate through the userPattern and display each color with its own color
   userPattern.forEach((color) => {
     const span = document.createElement("span");
-    span.style.color = color; // Set the color of the span to match the button color
-    span.textContent = color.toUpperCase() + " "; // Convert the color name to uppercase
-    sequenceDisplay.appendChild(span); // Append the span to the display
+    span.style.color = color; 
+    span.textContent = color.toUpperCase() + " "; 
+    sequenceDisplay.appendChild(span); 
   });
 
   checkAnswer(userPattern.length - 1);
@@ -100,13 +96,12 @@ function checkAnswer(currentLevel) {
     if (userPattern.length === gamePattern.length) {
       disableUserInput();
       setTimeout(() => {
-        // Show the congrats message when the level is passed
         showCongratsMessage();
         setTimeout(() => {
           hideCongratsMessage();
-          setTimeout(() => {}, 1000); // Delay before starting the next level
+          setTimeout(() => {}, 1000); 
           nextSequence();
-        }, 2000); // Hide congrats message after 2 seconds
+        }, 2000); 
       }, 1000);
     }
   } else {
@@ -124,10 +119,8 @@ function checkAnswer(currentLevel) {
       hideLoseMessage();
     }, 2000);
 
-    // Disable further input
     gameStarted = false;
 
-    // Reset the game state after a brief delay
     setTimeout(() => {
       level = 0;
       gamePattern = [];
@@ -141,18 +134,18 @@ function showCongratsMessage() {
   const message = `Congrats! You passed level ${level}!`;
   const congratsMessageElement = document.getElementById("level-message");
   congratsMessageElement.textContent = message;
-  congratsMessageElement.style.display = "block"; // Ensure it's displayed
+  congratsMessageElement.style.display = "block"; 
   setTimeout(() => {
-    congratsMessageElement.classList.add("show"); // Show the message with animation
-  }, 50); // Small delay to trigger the animation
+    congratsMessageElement.classList.add("show"); 
+  }, 50); 
 }
 
 function hideCongratsMessage() {
   const congratsMessageElement = document.getElementById("level-message");
-  congratsMessageElement.classList.remove("show"); // Remove animation class
+  congratsMessageElement.classList.remove("show"); 
   setTimeout(() => {
-    congratsMessageElement.style.display = "none"; // Hide the message after animation
-  }, 1000); // Delay hiding it after the fade-out effect
+    congratsMessageElement.style.display = "none"; 
+  }, 1000); 
 }
 
 function showLoseMessage() {
@@ -161,20 +154,19 @@ function showLoseMessage() {
   }.`;
   const loseMessageElement = document.getElementById("level-message");
   loseMessageElement.textContent = message;
-  // set color to red
   loseMessageElement.style.color = "red";
-  loseMessageElement.style.display = "block"; // Ensure it's displayed
+  loseMessageElement.style.display = "block"; 
   setTimeout(() => {
-    loseMessageElement.classList.add("show"); // Show the message with animation
-  }, 50); // Small delay to trigger the animation
+    loseMessageElement.classList.add("show"); 
+  }, 50); 
 }
 
 function hideLoseMessage() {
   const loseMessageElement = document.getElementById("level-message");
-  loseMessageElement.classList.remove("show"); // Remove animation class
+  loseMessageElement.classList.remove("show"); 
   setTimeout(() => {
-    loseMessageElement.style.display = "none"; // Hide the message after animation
-  }, 1000); // Delay hiding it after the fade-out effect
+    loseMessageElement.style.display = "none"; 
+  }, 1000); 
 }
 
 function showMyTexts() {
