@@ -17,7 +17,7 @@
     color: #ffffff;
   }
   
-  #game-container {
+  #gameContainer {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
@@ -59,7 +59,7 @@
     color: #333;
   }
   
-  #start-btn {
+  #startBtn {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -71,7 +71,7 @@
     transition: background-color 0.3s;
   }
   
-  #start-btn:hover {
+  #startBtn:hover {
     background-color: #45a049;
   }
   
@@ -79,7 +79,7 @@
     font-weight: bold;
   }
   
-  #level-message {
+  #levelMessage {
     font-size: 24px;
     font-weight: bold;
     color: green;
@@ -90,7 +90,7 @@
     display: none; /* Make sure it's hidden initially */
   }
   
-  #level-message.show {
+  #levelMessage.show {
     opacity: 1; /* Fade in the message */
     display: block; /* Make it visible */
   }
