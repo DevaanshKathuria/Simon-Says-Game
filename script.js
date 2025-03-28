@@ -15,7 +15,7 @@ function startGame() {
     userPattern = [];
     clickCount = 0;
     document.getElementById("status").textContent = `Level ${level}`;
-    document.getElementById("click-count").textContent = clickCount;
+    document.getElementById("clickCount").textContent = clickCount;
 
     showMyTexts();
     nextSequence();
@@ -25,11 +25,11 @@ function startGame() {
 function nextSequence() {
   userPattern = [];
   clickCount = 0;
-  document.getElementById("click-count").textContent = clickCount;
+  document.getElementById("clickCount").textContent = clickCount;
   level++;
   document.getElementById("status").textContent = `Level ${level}`;
 
-  document.getElementById("sequence-display").textContent = "-";
+  document.getElementById("sequenceDisplay").textContent = "-";
 
   const randomColor = colors[Math.floor(Math.random() * colors.length)];
   gamePattern.push(randomColor);
@@ -76,9 +76,9 @@ function handleUserClick(event) {
   userPattern.push(clickedColor);
   flashButton(clickedColor);
   clickCount++;
-  document.getElementById("click-count").textContent = clickCount;
+  document.getElementById("clickCount").textContent = clickCount;
 
-  const sequenceDisplay = document.getElementById("sequence-display");
+  const sequenceDisplay = document.getElementById("sequenceDisplay");
   sequenceDisplay.innerHTML = "";
 
   userPattern.forEach((color) => {
@@ -124,15 +124,15 @@ function checkAnswer(currentLevel) {
     setTimeout(() => {
       level = 0;
       gamePattern = [];
-      document.getElementById("sequence-display").textContent = "-";
-      document.getElementById("click-count").textContent = 0;
+      document.getElementById("sequenceDisplay").textContent = "-";
+      document.getElementById("clickCount").textContent = 0;
     }, 1500);
   }
 }
 
 function showCongratsMessage() {
   const message = `Congrats! You passed level ${level}!`;
-  const congratsMessageElement = document.getElementById("level-message");
+  const congratsMessageElement = document.getElementById("levelMessage");
   congratsMessageElement.textContent = message;
   congratsMessageElement.style.display = "block"; 
   setTimeout(() => {
@@ -141,7 +141,7 @@ function showCongratsMessage() {
 }
 
 function hideCongratsMessage() {
-  const congratsMessageElement = document.getElementById("level-message");
+  const congratsMessageElement = document.getElementById("levelMessage");
   congratsMessageElement.classList.remove("show"); 
   setTimeout(() => {
     congratsMessageElement.style.display = "none"; 
@@ -152,7 +152,7 @@ function showLoseMessage() {
   const message = `Game Over! Correct color was ${
     gamePattern[userPattern.length - 1]
   }.`;
-  const loseMessageElement = document.getElementById("level-message");
+  const loseMessageElement = document.getElementById("levelMessage");
   loseMessageElement.textContent = message;
   loseMessageElement.style.color = "red";
   loseMessageElement.style.display = "block"; 
@@ -162,7 +162,7 @@ function showLoseMessage() {
 }
 
 function hideLoseMessage() {
-  const loseMessageElement = document.getElementById("level-message");
+  const loseMessageElement = document.getElementById("levelMessage");
   loseMessageElement.classList.remove("show"); 
   setTimeout(() => {
     loseMessageElement.style.display = "none"; 
