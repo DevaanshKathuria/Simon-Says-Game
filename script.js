@@ -5,7 +5,7 @@ let level = 0;
 let clickCount = 0;
 let gameStarted = false;
 
-document.getElementById("start-btn").addEventListener("click", startGame);
+document.getElementById("startBtn").addEventListener("click", startGame);
 
 function startGame() {
   if (!gameStarted) {
