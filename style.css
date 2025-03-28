@@ -95,7 +95,7 @@
     display: block; /* Make it visible */
   }
   
-  .my-text {
+  .myText {
     font-size: 1.5rem;
     margin-top: 20px;
     color: #ffffff;
@@ -103,7 +103,7 @@
     transition: opacity 0.5s ease-in-out;
     display: none;
   }
-  .my-text.show {
+  .myText.show {
     opacity: 1;
     display: block;
     transition: opacity 0.5s ease-in-out;
