@@ -170,7 +170,7 @@ function hideLoseMessage() {
 }
 
 function showMyTexts() {
-  const texts = document.getElementsByClassName("my-text");
+  const texts = document.getElementsByClassName("myText");
 
   for (let i = 0; i < texts.length; i++) {
     texts[i].style.display = "block";
@@ -179,7 +179,7 @@ function showMyTexts() {
 }
 
 function hideMyTexts() {
-  const texts = document.getElementsByClassName("my-text");
+  const texts = document.getElementsByClassName("myText");
 
   for (let i = 0; i < texts.length; i++) {
     texts[i].classList.remove("show");
