@@ -85,14 +85,14 @@
     color: green;
     text-align: center;
     margin-top: 20px;
-    opacity: 0; /* Initially hidden */
+    opacity: 0; 
     transition: opacity 0.5s ease-in-out;
-    display: none; /* Make sure it's hidden initially */
+    display: none; 
   }
   
   #levelMessage.show {
-    opacity: 1; /* Fade in the message */
-    display: block; /* Make it visible */
+    opacity: 1;
+    display: block;
   }
   
   .myText {
